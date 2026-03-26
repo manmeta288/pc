@@ -1,0 +1,11 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "buildCommand": "cd .. && corepack pnpm install --frozen-lockfile && corepack pnpm build"
+  },
+  "deploy": {
+    "startCommand": "cd .. && HOST=0.0.0.0 SERVE_UI=true node server/dist/index.js",
+    "healthcheckPath": "/api/health",
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
